@@ -1,0 +1,71 @@
+$columns : 12!default;
+$gutter : 20px!default;
+
+$x-small: 768px;
+$small:  678px;
+$medium: 992px;
+$large: 1200px;
+
+
+%col{
+	float: left;
+	position: relative;
+	min-height: 1px;
+	padding: 0 $gutter * 0.5;
+
+	background-color: rgba(#000, 0.2);
+	border : 1px solid rgba(#000, 0.5)
+}
+
+@for $i from 1 through $columns{
+	.col-#{$i}{
+	@extend %col;
+	 width: $i / $columns * 100%;
+	  }
+
+	 .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}{ @extend %col; }
+}
+
+@media (max-width: $x-small){
+
+     @for $i from 1 through $columns{
+	.col-xs-#{$i}{
+	 width: $i / $columns * 100%;
+	  }
+	
+}
+
+}
+
+
+@media (min-width: $small){
+
+          @for $i from 1 through $columns{
+	.col-sm-#{$i}{
+	 width: $i / $columns * 100%;
+	  }
+	
+}
+}
+
+@media (min-width: $medium){
+
+         @for $i from 1 through $columns{
+	.col-md-#{$i}{
+	 width: $i / $columns * 100%;
+	  }
+	
+}
+}
+
+@media (min-width: $large){
+
+          @for $i from 1 through $columns{
+	.col-lg-#{$i}{
+	 width: $i / $columns * 100%;
+	  }
+	
+}
+}
+
+

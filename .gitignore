@@ -1,0 +1,5 @@
+env/
+ecom/ecom/local_settings.py
+*.pyc
+.env
+.git
